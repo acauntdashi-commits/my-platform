@@ -1,0 +1,101 @@
+/* style.css */
+
+/* Общие настройки для всей страницы */
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Шрифт: простой, читаемый, как в учебниках */
+  background-color: #f5f7fa; /* Спокойный светло-серый фон — не белый, чтобы не слепило */
+  color: #333; /* Тёмно-серый текст — мягче, чем чёрный */
+  line-height: 1.7; /* Межстрочный интервал: чтобы текст «дышал» и легко читался */
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер — как рамка вокруг основного контента */
+.container {
+  max-width: 800px; /* Не растягиваем текст на весь экран: так читать удобнее */
+  margin: 40px auto; /* Отступ сверху и снизу + центрирование по горизонтали */
+  padding: 30px;
+  background: #ffffff; /* Белый фон под контентом */
+  border-radius: 12px; /* Скруглённые углы — дружелюбнее, чем прямые */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Лёгкая тень, будто карточка приподнята */
+}
+
+/* Заголовки: делаем их заметными, но спокойными */
+h1 {
+  text-align: center;
+  color: #2c3e50; /* Тёмно-синий, почти графитовый — солидно */
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #34495e;
+  border-bottom: 2px solid #ecf0f1; /* Тонкая линия под заголовком */
+  padding-bottom: 8px;
+  margin-top: 40px;
+}
+
+/* Навигация: аккуратные ссылки сверху */
+nav {
+  margin-bottom: 30px;
+  text-align: center; /* Центрируем меню */
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 12px;
+  color: #3498db; /* Приятный синий */
+  text-decoration: none; /* Убираем подчёркивание */
+  font-weight: 600;
+  transition: color 0.3s ease; /* Плавное изменение цвета при наведении */
+}
+
+nav a:hover {
+  color: #2980b9; /* Чуть темнее при наведении — сигнал, что ссылка активна */
+}
+
+/* Списки: делаем пункты аккуратными, с отступами */
+ul {
+  list-style-type: disc; /* Стандартные точки */
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Фото: центрируем и делаем адаптивным */
+img {
+  display: block;
+  margin: 25px auto; /* Центрирование по горизонтали */
+  max-width: 100%; /* Если фото большое — сожмётся, если маленькое — останется как есть */
+  height: auto;
+  border-radius: 8px; /* Лёгкое скругление у фото — дружелюбнее */
+}
+
+/* Кнопки: превращаем ссылки в кнопки */
+a.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 28px;
+  background-color: #3498db; /* Синий фон */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px; /* Скругление углов кнопки */
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3); /* Лёгкая тень под кнопкой */
+  transition: all 0.3s ease;
+}
+
+a.btn:hover {
+  background-color: #2980b9; /* При наведении чуть темнее */
+  transform: translateY(-2px); /* Лёгкий подъём кнопки вверх */
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4); /* Тень чуть заметнее */
+}
+
+/* Адаптивность: на телефонах контейнер будет занимать почти всю ширину */
+@media (max-width: 600px) {
+  .container {
+    margin: 15px;
+    padding: 20px;
+  }
+}
