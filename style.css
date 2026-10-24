@@ -80,7 +80,7 @@ a.btn {
   background-color: #3498db; /* Синий фон */
   color: white;
   text-decoration: none;
-  border-radius: 6px; /* Скругление углов кнопки */
+  border-radius: 25px; /* Скругление углов кнопки */
   font-weight: bold;
   box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3); /* Лёгкая тень под кнопкой */
   transition: all 0.3s ease;
@@ -90,6 +90,11 @@ a.btn:hover {
   background-color: #2980b9; /* При наведении чуть темнее */
   transform: translateY(-2px); /* Лёгкий подъём кнопки вверх */
   box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4); /* Тень чуть заметнее */
+}
+
+a.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(52, 152, 219, 0.3);
 }
 
 /* Адаптивность: на телефонах контейнер будет занимать почти всю ширину */
@@ -113,7 +118,7 @@ a.btn:hover {
 .features {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px; /* карточки не слипаются друг с другом */
   justify-content: center;
   margin-top: 30px;
 }
@@ -121,7 +126,7 @@ a.btn:hover {
 /* Сама карточка */
 .feature-card {
   background: #f8f9fa;
-  padding: 20px;
+  padding: 20px; /* текст внутри не прилипает к краям карточки */
   border-radius: 8px;
   width: 230px; /* было 300px, карточки встали в два ряда */ 
   box-sizing: border-box; /* ширина включает padding и border */
