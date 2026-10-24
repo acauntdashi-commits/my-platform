@@ -99,3 +99,53 @@ a.btn:hover {
     padding: 20px;
   }
 }
+/* Стиль для главного фото на главной странице */
+.hero-img {
+  display: block;
+  margin: 25px auto;
+  max-width: 100%;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Контейнер для карточек: выстраиваем их в ряд */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Сама карточка */
+.feature-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  width: 230px; /* было 300px, карточки встали в два ряда */ 
+  box-sizing: border-box; /* ширина включает padding и border */
+  text-align: center;
+}
+
+.feature-card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Адаптивность: на телефонах карточки встают в колонку */
+@media (max-width: 600px) {
+  .features {
+    flex-direction: column;
+  }
+  .feature-card {
+    width: 100%;
+  }
+}
