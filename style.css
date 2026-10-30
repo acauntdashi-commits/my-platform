@@ -104,6 +104,15 @@ a.btn:active {
     padding: 20px;
   }
 }
+
+/* Стиль для строки - перевода на почту */
+.contact-note {
+  text-align: center; 
+  font-size: 0.9rem; 
+  color: #555;
+}
+
+
 /* Стиль для главного фото на главной странице */
 .hero-img {
   display: block;
