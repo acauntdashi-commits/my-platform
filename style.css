@@ -236,3 +236,18 @@ a.btn:active {
 #ответ3:focus {
   border-color: #3498db;
 }
+
+.дробь {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 3px;
+}
+.числитель, .знаменатель {
+    display: block;
+    padding: 0 6px;
+}
+.числитель {
+    border-bottom: 2px solid #333;
+    padding-bottom: 2px;
+}
