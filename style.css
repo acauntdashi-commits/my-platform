@@ -156,7 +156,9 @@ a.btn:active {
 }
 /* Тренажёр: уравнение крупным шрифтом в центре */
 #уравнение,
-#уравнение1 {
+#уравнение1,
+#уравнение2,
+#уравнение3 {
   font-size: 1.8rem; /* крупно — это главный объект страницы */
   text-align: center;
   color: #2c3e50; /* тот же графитовый, что у заголовков */
@@ -169,8 +171,12 @@ a.btn:active {
 /* Тренажёр: кнопка «Новая задача» в стиле a.btn */
 #новаяЗадача,
 #новаяЗадача1,
+#новаяЗадача2,
+#новаяЗадача3,
 #проверить,
-#проверить1 {
+#проверить1,
+#проверить2,
+#проверить3 {
   display: inline-block;
   margin: 10px;
   padding: 14px 28px;
@@ -187,8 +193,12 @@ a.btn:active {
 
 #новаяЗадача:hover,
 #новаяЗадача1:hover,
+#новаяЗадача2:hover,
+#новаяЗадача3:hover,
 #проверить:hover,
-#проверить1:hover {
+#проверить1:hover,
+#проверить2:hover,
+#проверить3:hover {
   background-color: #2980b9;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
@@ -196,8 +206,12 @@ a.btn:active {
 
 #новаяЗадача:active,
 #новаяЗадача1:active,
+#новаяЗадача2:active,
+#новаяЗадача3:active,
 #проверить:active,
-#проверить1:active {
+#проверить1:active,
+#проверить2:active,
+#проверить3:active {
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(52, 152, 219, 0.3);
 }
@@ -205,7 +219,9 @@ a.btn:active {
   text-align: center;
 }
 #ответ,
-#ответ1 {
+#ответ1,
+#ответ2,
+#ответ3 {
   padding: 10px 14px;
   border: 2px solid #dfe6e9;
   border-radius: 8px;
@@ -215,6 +231,8 @@ a.btn:active {
 }
 
 #ответ:focus,
-#ответ1:focus {
+#ответ1:focus,
+#ответ2:focus,
+#ответ3:focus {
   border-color: #3498db;
 }
