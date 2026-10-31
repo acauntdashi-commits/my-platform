@@ -320,3 +320,26 @@ a.btn:active {
     transform: translateY(0);
     box-shadow: 0 1px 2px rgba(52, 152, 219, 0.3);
 }
+
+/* ============ Таблица занятий и цен ============ */
+
+.pricing table {
+    width: 100%;
+    border-collapse: collapse; /* убирает двойные рамки между ячейками */
+}
+
+.pricing th,
+.pricing td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #ecf0f1; /* та же линия, что под заголовками h2 */
+}
+
+.pricing th {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db; /* синяя линия под шапкой — как у h2, но акцентнее */
+}
+
+.wrapper {
+  overflow-x: auto;
+}
