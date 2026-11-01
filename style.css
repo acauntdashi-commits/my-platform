@@ -90,8 +90,14 @@ img {
   border-radius: 8px; /* Лёгкое скругление у фото — дружелюбнее */
 }
 
+/* Класс hero на главной страничке*/
+.hero {
+padding: 60px 20px 80px;
+text-align: center;
+}
+
 /* Кнопки: превращаем ссылки в кнопки */
-a.btn {
+.btn {
   display: inline-block;
   margin-top: 25px;
   padding: 14px 28px;
@@ -104,13 +110,13 @@ a.btn {
   transition: all 0.3s ease;
 }
 
-a.btn:hover {
+.btn:hover {
   background-color: #2980b9; /* При наведении чуть темнее */
   transform: translateY(-2px); /* Лёгкий подъём кнопки вверх */
   box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4); /* Тень чуть заметнее */
 }
 
-a.btn:active {
+.btn:active {
   transform: translateY(0);
   box-shadow: 0 1px 2px rgba(52, 152, 219, 0.3);
 }
