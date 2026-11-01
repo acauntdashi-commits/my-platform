@@ -20,6 +20,24 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Лёгкая тень, будто карточка приподнята */
 }
 
+/* Контейнер для верхней линии flex */
+.header-inner {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+padding: 15px 0;
+}
+
+.header-inner a{
+color:  #3498db;
+text-decoration: none;
+line-height: 1;
+}
+
+.header-inner a:hover {
+color: #2c3e50;
+}
+
 /* Заголовки: делаем их заметными, но спокойными */
 h1 {
   text-align: center;
