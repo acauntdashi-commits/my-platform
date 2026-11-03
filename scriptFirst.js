@@ -1,3 +1,4 @@
+function generateTask() {
 console.log("Давай решать");
 
 let a = Math.floor(Math.random() * 11); // случайное целое от 0 до 10
@@ -25,3 +26,10 @@ if (operation === "+") {
 }
 
 console.log(`${a} ${operation} ${b} = ${c}`); // пример со случайным знаком и ответом
+
+return c
+
+}
+const  answer = generateTask();
+
+console.log(answer);
