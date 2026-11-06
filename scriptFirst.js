@@ -20,7 +20,6 @@ function calculate(a, b, operation) {
 }
 
 function generateTask() {
-    console.log("Давай решать");
 
     const operation = pickOperation();
     let a = Math.floor(Math.random() * 11); // случайное целое от 0 до 10
@@ -35,10 +34,48 @@ function generateTask() {
 
     const c = calculate(a, b, operation);
 
-    console.log(`${a} ${operation} ${b} = ${c}`); // пример со случайным знаком и ответом
-
-    return c;
+    return { a: a, b: b, operation: operation, c: c };
 }
 
-const answer = generateTask();
-console.log(answer);
+let correct = 0; //счетчик правильных ответов
+
+const history = [];
+
+for (let i = 0; i < 5; i++) {
+    const task = generateTask();
+    const userAnswer = prompt(`${task.a} ${task.operation} ${task.b} = ?`);
+    const isCorrect = Number(userAnswer) === task.c;
+
+    if (isCorrect) {
+        correct++;
+    }
+
+    history.push({
+        a: task.a,
+        b: task.b,
+        operation: task.operation,
+        c: task.c,
+        userAnswer: userAnswer,
+        isCorrect: isCorrect
+
+    })
+}
+
+console.log("Твой счёт: " + correct + " из 5");
+
+for (let i = 0; i < history.length; i++) {
+
+    const round = history[i];
+
+let mark;
+
+if (round.isCorrect) {
+    mark = "Верно";
+} else {
+    mark = "Мимо, правильный ответ был " + round.c;
+}
+console.log("Раунд " + (i + 1) + ": " + round.a + " " + round.operation + " " + round.b +
+    " = ?  Ты ответил " + round.userAnswer + " — " + mark);
+
+}
+
