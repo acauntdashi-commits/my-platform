@@ -67,15 +67,39 @@ for (let i = 0; i < history.length; i++) {
 
     const round = history[i];
 
-let mark;
+    let mark;
 
-if (round.isCorrect) {
-    mark = "Верно";
-} else {
-    mark = "Мимо, правильный ответ был " + round.c;
-}
-console.log("Раунд " + (i + 1) + ": " + round.a + " " + round.operation + " " + round.b +
-    " = ?  Ты ответил " + round.userAnswer + " — " + mark);
+    if (round.isCorrect) {
+        mark = "Верно";
+    } else {
+        mark = "Мимо, правильный ответ был " + round.c;
+    }
+    console.log("Раунд " + (i + 1) + ": " + round.a + " " + round.operation + " " + round.b +
+        " = ?  Ты ответил " + round.userAnswer + " — " + mark);
 
 }
+
+const checkButton = document.querySelector("#checkButton");
+const newTaskButton = document.querySelector("#newTask");
+const answerInput = document.querySelector("#answer");
+
+function sayHi() {
+    console.log("Меня нажали");
+}
+newTaskButton.addEventListener("click", sayHi);
+
+function checkAnswer() {
+    if (answerInput.value === "") {
+        console.log("Поле пустое");
+        return;
+    }
+    const guess = Number(answerInput.value);
+    console.log(guess);
+    console.log(typeof guess);
+}
+
+checkButton.addEventListener("click", checkAnswer);
+
+
+
 
