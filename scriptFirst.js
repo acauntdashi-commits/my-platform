@@ -1,3 +1,17 @@
+// --- Ящики для элементов страницы ---
+
+const checkButton = document.querySelector("#checkButton");
+const newTaskButton = document.querySelector("#newTask");
+const answerInput = document.querySelector("#answer");
+const addition = document.querySelector("#addition");
+
+// --- Ящики для текущей задачи ---
+
+let taskA;
+let taskB;
+let taskC;
+let taskOperation;
+
 function pickOperation() {
     let operation;
 
@@ -21,72 +35,26 @@ function calculate(a, b, operation) {
 
 function generateTask() {
 
-    const operation = pickOperation();
-    let a = Math.floor(Math.random() * 11); // случайное целое от 0 до 10
-    let b = Math.floor(Math.random() * (11 - a)); // случайное целое от 0 до 10 - a, чтобы сумма не вышла за 10
+    taskOperation = pickOperation();
+    taskA = Math.floor(Math.random() * 11); // случайное целое от 0 до 10
+    taskB = Math.floor(Math.random() * (11 - taskA)); // случайное целое от 0 до 10 - a, чтобы сумма не вышла за 10
 
     // для минуса меняем местами, если второе число больше первого 
-    if (operation === "-" && b > a) {
-        const temp = a;
-        a = b;
-        b = temp;
+    if (taskOperation === "-" && taskB > taskA) {
+        const temp = taskA;
+        taskA = taskB;
+        taskB = temp;
     }
 
-    const c = calculate(a, b, operation);
-
-    return { a: a, b: b, operation: operation, c: c };
+    taskC = calculate(taskA, taskB, taskOperation);
 }
 
-let correct = 0; //счетчик правильных ответов
-
-const history = [];
-
-for (let i = 0; i < 5; i++) {
-    const task = generateTask();
-    const userAnswer = prompt(`${task.a} ${task.operation} ${task.b} = ?`);
-    const isCorrect = Number(userAnswer) === task.c;
-
-    if (isCorrect) {
-        correct++;
-    }
-
-    history.push({
-        a: task.a,
-        b: task.b,
-        operation: task.operation,
-        c: task.c,
-        userAnswer: userAnswer,
-        isCorrect: isCorrect
-
-    })
+function showTask() {
+    generateTask();
+    addition.textContent = taskA + " " + taskOperation + " " + taskB + " = ?";
 }
 
-console.log("Твой счёт: " + correct + " из 5");
-
-for (let i = 0; i < history.length; i++) {
-
-    const round = history[i];
-
-    let mark;
-
-    if (round.isCorrect) {
-        mark = "Верно";
-    } else {
-        mark = "Мимо, правильный ответ был " + round.c;
-    }
-    console.log("Раунд " + (i + 1) + ": " + round.a + " " + round.operation + " " + round.b +
-        " = ?  Ты ответил " + round.userAnswer + " — " + mark);
-
-}
-
-const checkButton = document.querySelector("#checkButton");
-const newTaskButton = document.querySelector("#newTask");
-const answerInput = document.querySelector("#answer");
-
-function sayHi() {
-    console.log("Меня нажали");
-}
-newTaskButton.addEventListener("click", sayHi);
+newTaskButton.addEventListener("click", showTask);
 
 function checkAnswer() {
     if (answerInput.value === "") {
@@ -94,8 +62,7 @@ function checkAnswer() {
         return;
     }
     const guess = Number(answerInput.value);
-    console.log(guess);
-    console.log(typeof guess);
+    console.log("Твой ответ:", guess, "— правильный:", taskC);
 }
 
 checkButton.addEventListener("click", checkAnswer);
