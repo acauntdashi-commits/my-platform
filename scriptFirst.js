@@ -4,6 +4,7 @@ const checkButton = document.querySelector("#checkButton");
 const newTaskButton = document.querySelector("#newTask");
 const answerInput = document.querySelector("#answer");
 const addition = document.querySelector("#addition");
+const feedback = document.querySelector("#feedback");
 
 // --- Ящики для текущей задачи ---
 
